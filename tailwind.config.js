@@ -1,7 +1,17 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
+
+const flowbite = require("flowbite-react/tailwind");
+
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/js/**/*.js",
+    flowbite.content(),
+  ],
   theme: {
     extend: {},
     fontFamily: {
@@ -15,5 +25,7 @@ export default {
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/aspect-ratio"),
+    require("flowbite/plugin"),
+    require("tw-elements/plugin.cjs"),
   ],
 };
